@@ -8,15 +8,14 @@ PDK: sky130A
 cace_format: 5.2
 
 authorship:
-  designer: Tim Edwards
-  company: Efabless Corporation
+  designer: Refik Yalcin
+  company: uwaterloo
   creation_date: January 5, 2024
   license: Apache 2.0
 
 paths:
   root: ..
   schematic: xschem
-  magic: mag
   layout: gds
   netlist: netlist
   documentation: docs
@@ -99,150 +98,6 @@ default_conditions:
 
 
 parameters:
-  dc_params:
-    display: DC Params
-    spec:
-      a0:
-        display: DC gain
-        description: The DC gain of the OTA
-        unit: V/V
-        minimum:
-          value: 50
-        typical:
-          value: any
-        maximum:
-          value: any
-      ugf:
-        display: Unity Gain Frequency
-        description: The unity gain frequency of the OTA
-        unit: Hz
-        minimum:
-          value: 1e6
-        typical:
-          value: any
-        maximum:
-          value: any
-      pm:
-        display: Phase Margin
-        description: The phase margin of the OTA
-        unit: °
-        minimum:
-          value: 60
-        typical:
-          value: any
-        maximum:
-          value: any
-    tool:
-      ngspice:
-        template: ac.sch
-        format: ascii
-        suffix: .data
-        variables: [a0, ugf, pm]
-    plot:
-      gain_vs_temp:
-        type: xyplot
-        xaxis: temperature
-        yaxis: a0
-      ugf_vs_corner:
-        type: xyplot
-        xaxis: corner
-        yaxis: ugf
-      pm_vs_vdd:
-        type: xyplot
-        xaxis: vdd
-        yaxis: pm
-    conditions:
-      corner:
-        enumerate: [ss, tt, ff]
-      vdd:
-        minimum: 1.7
-        typical: 1.8
-        maximum: 1.9
-      temperature:
-        minimum: -40
-        typical: 27
-        maximum: 130
-
-  gain_mc:
-    description: DC gain Monte Carlo
-    display: DC gain MC
-    unit: V/V
-    spec:
-      a0:
-        minimum:
-          value: 50
-        typical:
-          value: any
-        maximum:
-          value: any
-    tool:
-      ngspice:
-        template: ac.sch
-        # Merge runs with the same conditions
-        # but different iterations
-        # This is used for plotting
-        collate: iterations
-        format: ascii
-        suffix: .data
-        variables: [a0, null, null]
-    plot:
-      gain_mc:
-        type: histogram
-        xaxis: a0
-    conditions:
-      iterations:
-        description: Iterations to run
-        display: Iterations
-        minimum: 1
-        maximum: 100
-        step: linear
-        stepsize: 1
-      corner:
-        typical: mc
-      temperature:
-        minimum: -40
-        typical: 27
-        maximum: 130
-
-  transient_response:
-    description: Large signal transient response
-    display: Large signal transient response
-    status: skip
-    unit: mV
-    tool:
-      ngspice:
-        template: transient.sch
-        format: ascii
-        suffix: .data
-        variables: [time, Vout, Vinp]
-    plot:
-      transient:
-        suffix: .svg
-        xaxis: time
-        yaxis: [Vout, Vinp]
-    variables:
-      time:
-        display: Time
-        unit: ms
-      Vinp:
-        display: Vinp
-        unit: V
-      Vout:
-        display: Vout
-        unit: V
-    conditions:
-      Tmax:
-        display: Simulation time
-        unit: ns
-        typical: 500
-      temperature:
-        minimum: -40
-        typical: 27
-        maximum: 130
-      corner:
-        minimum: ss
-        typical: tt
-        maximum: ff
 
   magic_area:
     spec:

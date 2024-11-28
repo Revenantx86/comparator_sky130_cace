@@ -11,4 +11,4 @@ set PDK $::env(PDK)
 set circuit1 [readnet spice $CACE_ROOT/netlist/layout/comparator.spice]
 set circuit2 [readnet spice $CACE_ROOT/netlist/schematic/comparator.spice]
 
-lvs "$circuit1 comparator" "$circuit2 comparator" $PDK_ROOT/$PDK/libs.tech/netgen/${PDK}_setup.tcl comparator.out -json
+lvs "$circuit1 comparator" "$circuit2 comparator" $PDK_ROOT/$PDK/libs.tech/netgen/${PDK}_setup.tcl comparator_comp.out -json

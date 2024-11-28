@@ -1,0 +1,30 @@
+Running parameters: magic_area, magic_drc, netgen_lvs, klayout_drc_feol, klayout_drc_beol, klayout_drc_full
+Generating simulation netlist from schematic…
+Sourcing /opt/xschem/share/xschem/xschemrc init file
+Sourcing xschem/xschemrc init file
+open_pdks installation: using /usr/local/share/pdk
+SKYWATER_MODELS: /usr/local/share/pdk/sky130A/libs.tech/combined
+SKYWATER_STDCELLS: /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice
+setup_tcp_bespice: problems finding a free TCP port
+couldn't open socket: address already in use
+-----------/home/unixpoly/vlsi/projects/cace/comparator/xschem/comparator.sch
+Error: undriven node: vop_comp
+Error: undriven node: von_comp
+-----------/home/unixpoly/vlsi/projects/cace/comparator/xschem/comparator.sch
+Error: Net shorted: q_comp - vop_comp
+Error: Net shorted: q_b_comp - von_comp
+
+Xschem process returned error code 10
+
+Extracting rcx netlist from layout…
+Directory for extraction files was not created.
+Extracting layout netlist from layout…
+Directory for extraction files was not created.
+Failed to regenerate project netlist, aborting.
+Parameter magic_area: Canceled.
+Parameter magic_drc: Canceled.
+Parameter netgen_lvs: Canceled.
+Parameter klayout_drc_feol: Canceled.
+Parameter klayout_drc_beol: Canceled.
+Parameter klayout_drc_full: Canceled.
+Done with CACE simulations and evaluations in 0:00:00.
