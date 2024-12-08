@@ -1,0 +1,14 @@
+Running parameters: magic_area, magic_drc, netgen_lvs, klayout_drc_feol, klayout_drc_beol, klayout_drc_full
+Generating simulation netlist from schematic…
+Extracting rcx netlist from layout…
+Directory for extraction files was not created.
+Extracting layout netlist from layout…
+Directory for extraction files was not created.
+Failed to regenerate project netlist, aborting.
+Parameter magic_area: Canceled.
+Parameter magic_drc: Canceled.
+Parameter netgen_lvs: Canceled.
+Parameter klayout_drc_feol: Canceled.
+Parameter klayout_drc_beol: Canceled.
+Parameter klayout_drc_full: Canceled.
+Done with CACE simulations and evaluations in 0:00:00.
